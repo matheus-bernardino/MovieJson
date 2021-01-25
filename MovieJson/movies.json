@@ -1,0 +1,240 @@
+{
+   "movies":[
+      {
+         "Title":"Star Wars: Episode IV - A New Hope",
+         "Year":"1977",
+         "Rated":"PG",
+         "Released":"25 May 1977",
+         "Runtime":"121 min",
+         "Genre":"Action, Adventure, Fantasy, Sci-Fi",
+         "Director":"George Lucas",
+         "Writer":"George Lucas",
+         "Actors":"Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing",
+         "Plot":"Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
+         "Language":"English",
+         "Country":"USA",
+         "Awards":"Won 6 Oscars. Another 52 wins & 29 nominations.",
+         "Poster":"https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+         "Ratings":[
+            {
+               "Source":"Internet Movie Database",
+               "Value":"8.6/10"
+            },
+            {
+               "Source":"Rotten Tomatoes",
+               "Value":"92%"
+            },
+            {
+               "Source":"Metacritic",
+               "Value":"90/100"
+            }
+         ],
+         "Metascore":"90",
+         "imdbRating":"8.6",
+         "imdbVotes":"1,227,656",
+         "imdbID":"tt0076759",
+         "Type":"movie",
+         "DVD":"N/A",
+         "BoxOffice":"$460,998,507",
+         "Production":"Lucasfilm Ltd.",
+         "Website":"N/A",
+         "Response":"True"
+      },
+      {
+         "Title":"Soul",
+         "Year":"2020",
+         "Rated":"PG",
+         "Released":"25 Dec 2020",
+         "Runtime":"100 min",
+         "Genre":"Animation, Adventure, Comedy, Family, Fantasy, Music",
+         "Director":"Pete Docter, Kemp Powers(co-director)",
+         "Writer":"Pete Docter (story and screenplay by), Mike Jones (story and screenplay by), Kemp Powers (story and screenplay by)",
+         "Actors":"Jamie Foxx, Tina Fey, Graham Norton, Rachel House",
+         "Plot":"A musician who has lost his passion for music is transported out of his body and must find his way back with the help of an infant soul learning about herself.",
+         "Language":"English",
+         "Country":"USA",
+         "Awards":"5 wins & 18 nominations.",
+         "Poster":"https://m.media-amazon.com/images/M/MV5BZGE1MDg5M2MtNTkyZS00MTY5LTg1YzUtZTlhZmM1Y2EwNmFmXkEyXkFqcGdeQXVyNjA3OTI0MDc@._V1_SX300.jpg",
+         "Ratings":[
+            {
+               "Source":"Internet Movie Database",
+               "Value":"7.8/10"
+            },
+            {
+               "Source":"Metacritic",
+               "Value":"86/100"
+            }
+         ],
+         "Metascore":"86",
+         "imdbRating":"7.8",
+         "imdbVotes":"662",
+         "imdbID":"tt2948372",
+         "Type":"movie",
+         "DVD":"N/A",
+         "BoxOffice":"N/A",
+         "Production":"N/A",
+         "Website":"N/A",
+         "Response":"True"
+      },
+      {
+         "Title":"Gemini",
+         "Year":"2017",
+         "Rated":"R",
+         "Released":"30 Mar 2018",
+         "Runtime":"93 min",
+         "Genre":"Crime, Drama, Mystery, Thriller",
+         "Director":"Aaron Katz",
+         "Writer":"Aaron Katz",
+         "Actors":"Lola Kirke, Zoë Kravitz, John Cho, Greta Lee",
+         "Plot":"A heinous crime tests the complex relationship between a tenacious personal assistant and her Hollywood starlet boss. As the assistant unravels the mystery, she must confront her own understanding of friendship, truth and celebrity.",
+         "Language":"English",
+         "Country":"USA",
+         "Awards":"1 win & 5 nominations.",
+         "Poster":"https://m.media-amazon.com/images/M/MV5BNWMxOTMwMzktYjcyZS00MGY4LWJkYjMtYmViYzRkZTgwZDIxXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+         "Ratings":[
+            {
+               "Source":"Internet Movie Database",
+               "Value":"5.4/10"
+            },
+            {
+               "Source":"Rotten Tomatoes",
+               "Value":"72%"
+            },
+            {
+               "Source":"Metacritic",
+               "Value":"71/100"
+            }
+         ],
+         "Metascore":"71",
+         "imdbRating":"5.4",
+         "imdbVotes":"4,496",
+         "imdbID":"tt5795086",
+         "Type":"movie",
+         "DVD":"N/A",
+         "BoxOffice":"$200,340",
+         "Production":"Syncopated Films, Rough House Pictures",
+         "Website":"N/A",
+         "Response":"True"
+      },
+      {
+         "Title":"Guardians of the Galaxy",
+         "Year":"2014",
+         "Rated":"PG-13",
+         "Released":"01 Aug 2014",
+         "Runtime":"121 min",
+         "Genre":"Action, Adventure, Comedy, Sci-Fi",
+         "Director":"James Gunn",
+         "Writer":"James Gunn, Nicole Perlman, Dan Abnett (based on the Marvel comics by), Andy Lanning (based on the Marvel comics by), Bill Mantlo (character created by: Rocket Raccoon), Keith Giffen (character created by: Rocket Raccoon), Jim Starlin (characters created by: Drax the Destroyer, Gamora & Thanos), Steve Englehart (character created by: Star-Lord), Steve Gan (character created by: Star-Lord), Steve Gerber (character created by: Howard the Duck), Val Mayerik (character created by: Howard the Duck)",
+         "Actors":"Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel",
+         "Plot":"A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.",
+         "Language":"English",
+         "Country":"USA",
+         "Awards":"Nominated for 2 Oscars. Another 52 wins & 100 nominations.",
+         "Poster":"https://m.media-amazon.com/images/M/MV5BMTAwMjU5OTgxNjZeQTJeQWpwZ15BbWU4MDUxNDYxODEx._V1_SX300.jpg",
+         "Ratings":[
+            {
+               "Source":"Internet Movie Database",
+               "Value":"8.0/10"
+            },
+            {
+               "Source":"Rotten Tomatoes",
+               "Value":"91%"
+            },
+            {
+               "Source":"Metacritic",
+               "Value":"76/100"
+            }
+         ],
+         "Metascore":"76",
+         "imdbRating":"8.0",
+         "imdbVotes":"1,040,471",
+         "imdbID":"tt2015381",
+         "Type":"movie",
+         "DVD":"N/A",
+         "BoxOffice":"$333,718,600",
+         "Production":"Marvel Studios, Moving Picture Company, Marvel Enterprises",
+         "Website":"N/A",
+         "Response":"True"
+      },
+      {
+         "Title":"Thor: Ragnarok",
+         "Year":"2017",
+         "Rated":"PG-13",
+         "Released":"03 Nov 2017",
+         "Runtime":"130 min",
+         "Genre":"Action, Adventure, Comedy, Fantasy, Sci-Fi",
+         "Director":"Taika Waititi",
+         "Writer":"Eric Pearson, Craig Kyle, Christopher L. Yost, Stan Lee (based on the Marvel comics by), Larry Lieber (based on the Marvel comics by), Jack Kirby (based on the Marvel comics by)",
+         "Actors":"Chris Hemsworth, Tom Hiddleston, Cate Blanchett, Idris Elba",
+         "Plot":"Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarök, the destruction of his world, at the hands of the powerful and ruthless villain Hela.",
+         "Language":"English",
+         "Country":"USA, Australia",
+         "Awards":"6 wins & 50 nominations.",
+         "Poster":"https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_SX300.jpg",
+         "Ratings":[
+            {
+               "Source":"Internet Movie Database",
+               "Value":"7.9/10"
+            },
+            {
+               "Source":"Rotten Tomatoes",
+               "Value":"93%"
+            },
+            {
+               "Source":"Metacritic",
+               "Value":"74/100"
+            }
+         ],
+         "Metascore":"74",
+         "imdbRating":"7.9",
+         "imdbVotes":"583,285",
+         "imdbID":"tt3501632",
+         "Type":"movie",
+         "DVD":"N/A",
+         "BoxOffice":"$315,058,289",
+         "Production":"Marvel Studios",
+         "Website":"N/A",
+         "Response":"True"
+      },
+      {
+         "Title":"Ratatouille",
+         "Year":"2007",
+         "Rated":"G",
+         "Released":"29 Jun 2007",
+         "Runtime":"111 min",
+         "Genre":"Animation, Adventure, Comedy, Family, Fantasy",
+         "Director":"Brad Bird, Jan Pinkava(co-director)",
+         "Writer":"Brad Bird (screenwriter), Jan Pinkava (original story by), Jim Capobianco (original story by), Brad Bird (original story by), Emily Cook (additional story material)",
+         "Actors":"Patton Oswalt, Ian Holm, Lou Romano, Brian Dennehy",
+         "Plot":"A rat who can cook makes an unusual alliance with a young kitchen worker at a famous restaurant.",
+         "Language":"English, French",
+         "Country":"USA",
+         "Awards":"Won 1 Oscar. Another 66 wins & 42 nominations.",
+         "Poster":"https://m.media-amazon.com/images/M/MV5BMTMzODU0NTkxMF5BMl5BanBnXkFtZTcwMjQ4MzMzMw@@._V1_SX300.jpg",
+         "Ratings":[
+            {
+               "Source":"Internet Movie Database",
+               "Value":"8.0/10"
+            },
+            {
+               "Source":"Rotten Tomatoes",
+               "Value":"96%"
+            },
+            {
+               "Source":"Metacritic",
+               "Value":"96/100"
+            }
+         ],
+         "Metascore":"96",
+         "imdbRating":"8.0",
+         "imdbVotes":"639,120",
+         "imdbID":"tt0382932",
+         "Type":"movie",
+         "DVD":"N/A",
+         "BoxOffice":"$206,445,654",
+         "Production":"Pixar Animation Studios",
+         "Website":"N/A",
+         "Response":"True"
+      }
+   ]
+}
