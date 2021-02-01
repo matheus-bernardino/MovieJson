@@ -21,7 +21,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return UITableViewCell()
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "movie") as? MovieCell else { return UITableViewCell() }
-            cell.title.text = movies[indexPath.row].Title
+            cell.title.text = movies[indexPath.row].original_title
+            cell.sinopse.text = movies[indexPath.row].overview
+            DispatchQueue.global().async {
+                do {
+                    if let url = URL(string: "https://image.tmdb.org/t/p/w500") {
+                        var novaUrl = url.appendingPathComponent(self.movies[indexPath.row].poster_path)
+                        let data = try Data(contentsOf: novaUrl)
+                        DispatchQueue.main.async {
+                            cell.poster.image = UIImage(data: data)
+                        }
+                    }
+                } catch  {
+                    print("Deu ruim na imagem")
+                }
+            }
             return cell
         }
 //        guard let cell = tableView.dequeueReusableCell(withIdentifier: "movie") as? MovieCell else { return UITableViewCell() }
@@ -69,24 +83,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        http://www.omdbapi.com/?apikey=[yourkey]&
 //        http://www.omdbapi.com/?i=tt3896198&apikey=a9803992
         print("aqui")
-        let acssess = Acssess()
-        acssess.getInfo()
+        
         tableView.delegate = self
         tableView.dataSource = self
-        
+        perforAcssess()
 //        loadMovies(resourse: "movies", type: "json")
         // Do any additional setup after loading the view.
     }
 
+    func perforAcssess() {
+        let acssess = Acssess()
+//        acssess.delegate = self
+        acssess.getInfo { result in
+            switch result {
+            case .success(let data):
+                self.sendData(data: data)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 
-}
-
-extension ViewController: InfoReceived {
     func sendData(data: Data) {
         print("Protocol")
         do {
             let decoder = JSONDecoder.init()
-            movies = try decoder.decode(Movies.self, from: data).movies
+            movies = try decoder.decode(Movies.self, from: data).results
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
