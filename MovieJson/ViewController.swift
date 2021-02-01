@@ -17,6 +17,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if movies.isEmpty {
+            return UITableViewCell()
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "movie") as? MovieCell else { return UITableViewCell() }
+            cell.title.text = movies[indexPath.row].Title
+            return cell
+        }
 //        guard let cell = tableView.dequeueReusableCell(withIdentifier: "movie") as? MovieCell else { return UITableViewCell() }
 //
 //        cell.title.text = movies[indexPath.row].Title
@@ -35,54 +42,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //            }
 //        }
 //        return cell;
-        return UITableViewCell()
+//        return UITableViewCell()
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 135
     }
     
-    func loadMovies(resourse: String, type: String) {
-        if let path = Bundle.main.path(forResource: resourse, ofType: type) {
-            do {
-                let url = URL(fileURLWithPath: path)
-                let data = try Data(contentsOf: url, options: .mappedIfSafe)
-                
-                let decoder = JSONDecoder.init()
-                movies = try decoder.decode(Movies.self, from: data).movies
-            } catch  {
-                print("Deu ruim")
-            }
-        }
-        
-    }
+//    func loadMovies(resourse: String, type: String) {
+//        if let path = Bundle.main.path(forResource: resourse, ofType: type) {
+//            do {
+//                let url = URL(fileURLWithPath: path)
+//                let data = try Data(contentsOf: url, options: .mappedIfSafe)
+//                
+//                let decoder = JSONDecoder.init()
+//                movies = try decoder.decode(Movies.self, from: data).movies
+//            } catch  {
+//                print("Deu ruim")
+//            }
+//        }
+//        
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        http://www.omdbapi.com/?apikey=[yourkey]&
 //        http://www.omdbapi.com/?i=tt3896198&apikey=a9803992
-        let baseUrl = "https://www.omdbapi.com"
-        let key = "a9803992"
-        if let url = URL(string: baseUrl) {
-            var componets = URLComponents(string: url.absoluteString)
-            componets?.queryItems = [
-                URLQueryItem(name: "apiKey", value: key),
-                URLQueryItem(name: "t", value: "star")
-            ]
-            let session = URLSession.shared
-            if let urlFromComponents = componets?.url {
-                session.dataTask(with: urlFromComponents) { (Data, URLResponse, Error) in
-                    if Error != nil {
-                        print(Error?.localizedDescription)
-                    }
-                    if let data = Data {
-                        if let information = String(data: data, encoding: .utf8) {
-                            print(information)
-                        }
-                    }
-                }.resume()
-            }
-        }
+        print("aqui")
+        let acssess = Acssess()
+        acssess.getInfo()
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -93,3 +81,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 }
 
+extension ViewController: InfoReceived {
+    func sendData(data: Data) {
+        print("Protocol")
+        do {
+            let decoder = JSONDecoder.init()
+            movies = try decoder.decode(Movies.self, from: data).movies
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        } catch  {
+            print("Deu ruim")
+        }
+    }
+}
