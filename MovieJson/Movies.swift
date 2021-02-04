@@ -8,6 +8,5 @@
 import Foundation
 
 class Movies: Codable {
-    var page: Int
     var results = [Movie]()
 }

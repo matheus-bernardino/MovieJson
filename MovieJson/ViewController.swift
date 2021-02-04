@@ -7,10 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
+    @IBOutlet weak var search: UITextField!
     @IBOutlet weak var tableView: UITableView!
     var movies: [Movie] = []
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        print(textField.text)
+        if let text = textField.text {
+            let textString = text.split(separator: " ").joined(separator: "+")
+            perforAcssess(searchText: textString)
+        }
+        return true
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         movies.count
@@ -26,10 +36,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             DispatchQueue.global().async {
                 do {
                     if let url = URL(string: "https://image.tmdb.org/t/p/w500") {
-                        var novaUrl = url.appendingPathComponent(self.movies[indexPath.row].poster_path)
-                        let data = try Data(contentsOf: novaUrl)
-                        DispatchQueue.main.async {
-                            cell.poster.image = UIImage(data: data)
+                        if let posterUrl = self.movies[indexPath.row].poster_path {
+                            let novaUrl = url.appendingPathComponent(posterUrl)
+                            let data = try Data(contentsOf: novaUrl)
+                            DispatchQueue.main.async {
+                                cell.poster.image = UIImage(data: data)
+                            }
                         }
                     }
                 } catch  {
@@ -80,34 +92,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        http://www.omdbapi.com/?apikey=[yourkey]&
-//        http://www.omdbapi.com/?i=tt3896198&apikey=a9803992
-        print("aqui")
-        
         tableView.delegate = self
         tableView.dataSource = self
-        perforAcssess()
+        search.delegate = self
+        perforAcssess(searchText: "")
 //        loadMovies(resourse: "movies", type: "json")
         // Do any additional setup after loading the view.
     }
 
-    func perforAcssess() {
+    func perforAcssess(searchText: String) {
         let acssess = Acssess()
 //        acssess.delegate = self
-        acssess.getInfo { result in
+        acssess.getInfo( completion: { result in
             switch result {
             case .success(let data):
                 self.sendData(data: data)
             case .failure(let error):
                 print(error.localizedDescription)
             }
-        }
+        }, searchText: searchText)
     }
 
     func sendData(data: Data) {
         print("Protocol")
+        if let information = String(data: data, encoding: .utf8) {
+            print(information)
+        }
         do {
             let decoder = JSONDecoder.init()
+            
             movies = try decoder.decode(Movies.self, from: data).results
             DispatchQueue.main.async {
                 self.tableView.reloadData()

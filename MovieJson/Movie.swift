@@ -11,7 +11,7 @@ import Foundation
 class Movie: Codable {
     var original_title: String
     var overview: String
-    var poster_path: String
+    var poster_path: String?
 //    var Year: Int
 //    var Rated: String
 //    var Released: String
