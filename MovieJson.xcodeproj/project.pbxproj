@@ -19,6 +19,7 @@
 		2FAFFE1325BF77D20066D165 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFFE1225BF77D20066D165 /* Rating.swift */; };
 		2FAFFE1925BF7E4B0066D165 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFFE1825BF7E4B0066D165 /* Movies.swift */; };
 		3DC5F8D825C70A5B00902EA2 /* Acssess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC5F8D725C70A5B00902EA2 /* Acssess.swift */; };
+		3DC5F8DB25D0A56400902EA2 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC5F8DA25D0A56400902EA2 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		2FAFFE1225BF77D20066D165 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		2FAFFE1825BF7E4B0066D165 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		3DC5F8D725C70A5B00902EA2 /* Acssess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acssess.swift; sourceTree = "<group>"; };
+		3DC5F8DA25D0A56400902EA2 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				2FAFFDEC25BF6F370066D165 /* AppDelegate.swift */,
 				2FAFFDEE25BF6F370066D165 /* SceneDelegate.swift */,
 				2FAFFDF025BF6F370066D165 /* ViewController.swift */,
+				3DC5F8DA25D0A56400902EA2 /* Repository.swift */,
 				2FAFFDF225BF6F370066D165 /* Main.storyboard */,
 				2FAFFE0125BF70750066D165 /* MovieCell.swift */,
 				2FAFFE0825BF74CC0066D165 /* movies.json */,
@@ -164,6 +167,7 @@
 				3DC5F8D825C70A5B00902EA2 /* Acssess.swift in Sources */,
 				2FAFFE1325BF77D20066D165 /* Rating.swift in Sources */,
 				2FAFFE1025BF758E0066D165 /* Movie.swift in Sources */,
+				3DC5F8DB25D0A56400902EA2 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
