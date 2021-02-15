@@ -20,6 +20,8 @@
 		2FAFFE1925BF7E4B0066D165 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFFE1825BF7E4B0066D165 /* Movies.swift */; };
 		3DC5F8D825C70A5B00902EA2 /* Acssess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC5F8D725C70A5B00902EA2 /* Acssess.swift */; };
 		3DC5F8DB25D0A56400902EA2 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC5F8DA25D0A56400902EA2 /* Repository.swift */; };
+		3DC5F8E025DA1D8A00902EA2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DC5F8DE25DA1D8A00902EA2 /* Model.xcdatamodeld */; };
+		3DC5F8ED25DA250900902EA2 /* LastSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC5F8EC25DA250900902EA2 /* LastSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		2FAFFE1825BF7E4B0066D165 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		3DC5F8D725C70A5B00902EA2 /* Acssess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acssess.swift; sourceTree = "<group>"; };
 		3DC5F8DA25D0A56400902EA2 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		3DC5F8DF25DA1D8A00902EA2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		3DC5F8EC25DA250900902EA2 /* LastSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +74,12 @@
 		2FAFFDEB25BF6F370066D165 /* MovieJson */ = {
 			isa = PBXGroup;
 			children = (
+				3DC5F8E425DA214500902EA2 /* SavedMovies */,
 				2FAFFDEC25BF6F370066D165 /* AppDelegate.swift */,
 				2FAFFDEE25BF6F370066D165 /* SceneDelegate.swift */,
-				2FAFFDF025BF6F370066D165 /* ViewController.swift */,
 				3DC5F8DA25D0A56400902EA2 /* Repository.swift */,
 				2FAFFDF225BF6F370066D165 /* Main.storyboard */,
+				3DC5F8DE25DA1D8A00902EA2 /* Model.xcdatamodeld */,
 				2FAFFE0125BF70750066D165 /* MovieCell.swift */,
 				2FAFFE0825BF74CC0066D165 /* movies.json */,
 				2FAFFE1225BF77D20066D165 /* Rating.swift */,
@@ -84,8 +89,41 @@
 				2FAFFDF525BF6F370066D165 /* Assets.xcassets */,
 				2FAFFDF725BF6F370066D165 /* LaunchScreen.storyboard */,
 				2FAFFDFA25BF6F370066D165 /* Info.plist */,
+				3DC5F8E225DA211D00902EA2 /* InitialPage */,
 			);
 			path = MovieJson;
+			sourceTree = "<group>";
+		};
+		3DC5F8E225DA211D00902EA2 /* InitialPage */ = {
+			isa = PBXGroup;
+			children = (
+				3DC5F8E525DA218100902EA2 /* View */,
+			);
+			path = InitialPage;
+			sourceTree = "<group>";
+		};
+		3DC5F8E425DA214500902EA2 /* SavedMovies */ = {
+			isa = PBXGroup;
+			children = (
+				3DC5F8E725DA229200902EA2 /* View */,
+			);
+			path = SavedMovies;
+			sourceTree = "<group>";
+		};
+		3DC5F8E525DA218100902EA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2FAFFDF025BF6F370066D165 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DC5F8E725DA229200902EA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DC5F8EC25DA250900902EA2 /* LastSearchViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +204,8 @@
 				2FAFFDEF25BF6F370066D165 /* SceneDelegate.swift in Sources */,
 				3DC5F8D825C70A5B00902EA2 /* Acssess.swift in Sources */,
 				2FAFFE1325BF77D20066D165 /* Rating.swift in Sources */,
+				3DC5F8E025DA1D8A00902EA2 /* Model.xcdatamodeld in Sources */,
+				3DC5F8ED25DA250900902EA2 /* LastSearchViewController.swift in Sources */,
 				2FAFFE1025BF758E0066D165 /* Movie.swift in Sources */,
 				3DC5F8DB25D0A56400902EA2 /* Repository.swift in Sources */,
 			);
@@ -367,6 +407,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3DC5F8DE25DA1D8A00902EA2 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3DC5F8DF25DA1D8A00902EA2 /* Model.xcdatamodel */,
+			);
+			currentVersion = 3DC5F8DF25DA1D8A00902EA2 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2FAFFDE125BF6F370066D165 /* Project object */;
 }

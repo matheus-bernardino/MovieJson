@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     var movies: [Movie] = []
     var moviePictures: [UIImage] = []
+    var moviesSaved: [MovieState] = []
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text {
