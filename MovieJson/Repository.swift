@@ -33,18 +33,12 @@ class Repository {
                         completion(.failure(error))
                     }
                     if let data = Data {
-                        if let information = String(data: data, encoding: .utf8) {
-                            print(information)
-                        }
-                        if let information = String(data: data, encoding: .utf8) {
-                            print(information)
-                        }
                         do {
                             let decoder = JSONDecoder.init()
                             let movies = try decoder.decode(Movies.self, from: data).results
                             completion(.success(movies))
                         } catch  {
-                            print("Deu ruim")
+                            print(error.localizedDescription)
                         }
                     }
                 }.resume()
@@ -52,12 +46,12 @@ class Repository {
         }
     }
     
-    func getImages(completion: @escaping (_ result: Result<[UIImage], Error>)->Void, movies: [Movie]) {
+    func getImages(completion: @escaping (_ result: Result<[UIImage], Error>)->Void, poster_paths: [String?]) {
         var images: [UIImage] = []
-        for movie in movies {
+        for poster_path in poster_paths {
             do {
                 if let url = URL(string: "https://image.tmdb.org/t/p/w500") {
-                    if let posterUrl = movie.poster_path {
+                    if let posterUrl = poster_path {
                         let novaUrl = url.appendingPathComponent(posterUrl)
                         
                         
@@ -66,7 +60,7 @@ class Repository {
                     }
                 }
             } catch {
-                print("Deu ruim na imagem")
+                print(error.localizedDescription)
             }
         }
         completion(.success(images))

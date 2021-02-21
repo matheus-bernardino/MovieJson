@@ -9,11 +9,12 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
+    var controller = Controller()
+    var moviesState: [MovieState] = []
     @IBOutlet weak var search: UITextField!
     @IBOutlet weak var tableView: UITableView!
     var movies: [Movie] = []
     var moviePictures: [UIImage] = []
-    var moviesSaved: [MovieState] = []
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text {
@@ -32,11 +33,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return UITableViewCell()
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "movie") as? MovieCell else { return UITableViewCell() }
+            cell.delegate = self
             cell.title.text = movies[indexPath.row].original_title
+            for movie in self.moviesState {
+                if movies[indexPath.row].original_title == movie.title {
+                    cell.favButton.tintColor = .red
+                    break
+                }
+            }
+            print("index path row: \(indexPath.row)")
+            print("movie picture count: \(moviePictures.count)")
             cell.sinopse.text = movies[indexPath.row].overview
-            if indexPath.row <= moviePictures.count {
+            if indexPath.row < moviePictures.count {
                 cell.poster.image = moviePictures[indexPath.row]
             }
+            cell.movie = movies[indexPath.row]
             return cell
         }
     }
@@ -51,6 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         search.delegate = self
         perforAcssess(searchText: "")
+        moviesState = controller.loadMovies()
     }
 
     func perforAcssess(searchText: String) {
@@ -58,7 +70,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             switch result {
             case .success(let gotMovies):
                 self.movies = gotMovies
-                self.getMoviePictures(movies: self.movies)
+                var poster_paths: [String?] = []
+                for movie in self.movies {
+                    poster_paths.append(movie.poster_path)
+                }
+                self.getMoviePictures(poster_paths: poster_paths)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -68,7 +84,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }, searchText: searchText)
     }
     
-    func getMoviePictures(movies: [Movie]) {
+    func getMoviePictures(poster_paths: [String?]) {
         Repository.acssess.getImages(completion: { result in
             switch result {
             case .success(let imagesGot):
@@ -79,6 +95,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             case .failure(let error):
                 print(error.localizedDescription)
             }
-        }, movies: movies)
+        }, poster_paths: poster_paths)
+    }
+}
+
+extension ViewController: MovieCellDelegate {
+    func removeFavMovie(movie: Movie) {
+        controller.removeMovie(movie: movie)
+    }
+    
+    func addFavMovie(movie: Movie) {
+        controller.saveMovie(movie: movie)
     }
 }

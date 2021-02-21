@@ -7,8 +7,29 @@
 
 import UIKit
 
-class MovieCell: UITableViewCell {
+protocol MovieCellDelegate: class {
+    func addFavMovie(movie: Movie)
+    func removeFavMovie(movie: Movie)
+}
 
+class MovieCell: UITableViewCell {
+    var delegate: MovieCellDelegate?
+    var movie: Movie?
+    
+    @IBAction func addFav(_ sender: UIButton) {
+        if sender.tintColor == .red {
+            sender.tintColor = .blue
+            if let movie = movie {
+                delegate?.removeFavMovie(movie: movie)
+            }
+        } else {
+            sender.tintColor = .red
+            if let movie = movie {
+                delegate?.addFavMovie(movie: movie)
+            }
+        }
+    }
+    @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var poster: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var type: UILabel!
