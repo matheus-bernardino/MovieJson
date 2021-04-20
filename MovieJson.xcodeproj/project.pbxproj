@@ -78,10 +78,10 @@
 		2FAFFDEB25BF6F370066D165 /* MovieJson */ = {
 			isa = PBXGroup;
 			children = (
+				3D8FC1C42602BA95001388FB /* Service */,
 				3DC5F8E425DA214500902EA2 /* SavedMovies */,
 				2FAFFDEC25BF6F370066D165 /* AppDelegate.swift */,
 				2FAFFDEE25BF6F370066D165 /* SceneDelegate.swift */,
-				3DC5F8DA25D0A56400902EA2 /* Repository.swift */,
 				2FAFFDF225BF6F370066D165 /* Main.storyboard */,
 				3DC5F8DE25DA1D8A00902EA2 /* MovieJson.xcdatamodeld */,
 				2FAFFE0125BF70750066D165 /* MovieCell.swift */,
@@ -97,6 +97,14 @@
 				3DC5F8E225DA211D00902EA2 /* InitialPage */,
 			);
 			path = MovieJson;
+			sourceTree = "<group>";
+		};
+		3D8FC1C42602BA95001388FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3DC5F8DA25D0A56400902EA2 /* Repository.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		3DC5F8E225DA211D00902EA2 /* InitialPage */ = {
